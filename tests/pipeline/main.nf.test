@@ -1,0 +1,30 @@
+nextflow_pipeline {
+
+    name "nft-pipelines-utils"
+    script "./main.nf"
+
+    def scenarios = [
+        [ params: [:] ],
+        [ params: [ greeting: 'bonjour' ] ],
+        [ params: [:], stub: true ],
+        [
+            params: [ fail: true ],
+            failure: true,
+            snapshotStd: ['stderr', 'stdout'],
+            stdInclude: ['Failing on purpose'],
+        ],
+        [
+            name: "extra assertions and setup",
+            params: [ input: 'data/input.txt' ],
+            setup: { launchDir ->
+                new File("${launchDir}/data").mkdirs()
+                new File("${launchDir}/data/input.txt").text = 'from setup\n'
+            },
+            extraAssertions: { outdir, workflow -> new File("${outdir}/say/out.txt").text.trim() },
+            snapshotStd: ['stderr'],
+            stdInclude: ['Input file'],
+        ],
+    ]
+
+    pipelineTests(delegate, scenarios)
+}

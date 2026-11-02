@@ -1,0 +1,4 @@
+moduleName=nft-pipelines-utils
+moduleVersion=0.1.0-SNAPSHOT
+moduleAuthors=nf-core
+extensionMethods=nfcore.nftest.pipelines.Methods

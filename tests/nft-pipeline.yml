@@ -1,0 +1,5 @@
+# Test definition for the plugin's own test pipeline (tests/pipeline/main.nf)
+pipeline: pluginutils
+
+naming:
+  hideParams: [input]
