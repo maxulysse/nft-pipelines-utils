@@ -85,21 +85,12 @@ class Snapshot {
                 return withHeader(["${name}:variantsMD5,${vcf(file).variantsMD5}".toString()], name, file, o)
             case 'variantsSummaryPatterns':
                 return withHeader(["${name}:variantsSummary,${vcf(file).summary}".toString()], name, file, o)
-            case 'csvMD5Patterns':
-                return csvMD5(file, o)
+            case 'tableMD5Patterns':
+                def table = Plugins.nftUtils().normalizeTable(Paths.get(file), o.tableDoubleDigits as int, o.tableRemoveComments as boolean)
+                return "${name}:tableMD5,${table.md5()}".toString()
             default:
                 throw new IllegalStateException("nft-pipelines-utils: unhandled treatment ${treatment}")
         }
-    }
-
-    static String csvMD5(String file, Map o) {
-        def utils = Plugins.nftUtils()
-        // normalizeCsv is public from nft-utils#91, not in any release up to 1.2.1
-        if (!utils.methods.any { it.name == 'normalizeCsv' }) {
-            throw new IllegalStateException('nft-pipelines-utils: csvMD5Patterns needs an nft-utils release with normalizeCsv (after 1.2.1)')
-        }
-        def name = file.tokenize('/').last()
-        return "${name}:csvMD5,${utils.normalizeCsv(Paths.get(file), o.csvDoubleDigits as int).md5()}".toString()
     }
 
     static List withHeader(List entries, String name, String file, Map o) {

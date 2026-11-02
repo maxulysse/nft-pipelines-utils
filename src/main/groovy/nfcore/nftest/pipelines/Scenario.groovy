@@ -11,12 +11,12 @@ class Scenario {
         'readsStatsPatterns',
         'variantsMD5Patterns',
         'variantsSummaryPatterns',
-        'csvMD5Patterns',
+        'tableMD5Patterns',
     ]
 
     static final Set<String> KEYS = ([
         'name', 'profile', 'params', 'stub', 'failure', 'tag', 'noConda', 'options',
-        'ignorePatterns', 'unstablePatterns', 'referenceFasta', 'csvDoubleDigits', 'vcfHeaderContains',
+        'ignorePatterns', 'unstablePatterns', 'referenceFasta', 'tableDoubleDigits', 'tableRemoveComments', 'vcfHeaderContains',
         'logIgnore', 'logInclude', 'snapshotStd', 'stdInclude',
         'extraAssertions', 'setup',
     ] + TREATMENTS) as Set
@@ -58,7 +58,8 @@ class Scenario {
             // scenario treatments are checked before the definition ones, so a scenario can override them
             treatments       : [scenario: treatments(scenario), definition: treatments(snapshotDef)],
             referenceFasta   : scenario.referenceFasta ?: snapshotDef.referenceFasta,
-            csvDoubleDigits  : (scenario.csvDoubleDigits ?: snapshotDef.csvDoubleDigits ?: 6) as int,
+            tableDoubleDigits: (scenario.tableDoubleDigits ?: snapshotDef.tableDoubleDigits ?: 6) as int,
+            tableRemoveComments: (scenario.tableRemoveComments ?: snapshotDef.tableRemoveComments ?: false) as boolean,
             vcfHeaderContains: scenario.vcfHeaderContains,
             logIgnore        : LOG_IGNORE + list(logsDef.ignore) + list(scenario.logIgnore),
             logInclude       : list(scenario.logInclude ?: logsDef.include ?: ['WARN']),

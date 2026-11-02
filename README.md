@@ -77,9 +77,9 @@ Set `NFT_PIPELINE_DEFINITION` to read it from elsewhere.
 | `ignorePatterns`, `unstablePatterns` | Added to the definition ones |
 | `readsMD5Patterns`, `readsStatsPatterns` | BAM/CRAM/SAM reads md5 or statistics (nft-bam) |
 | `variantsMD5Patterns`, `variantsSummaryPatterns` | VCF variants md5 or summary (nft-vcf) |
-| `csvMD5Patterns` | md5 of the normalized table (needs an nft-utils release with `normalizeCsv`) |
+| `tableMD5Patterns` | md5 of the normalized table (nft-utils `normalizeTable`) |
 | `vcfHeaderContains` | Snapshot whether each VCF header contains this string |
-| `referenceFasta`, `csvDoubleDigits` | As in nft-utils `sanitizeOutput` |
+| `referenceFasta`, `tableDoubleDigits`, `tableRemoveComments` | As in nft-utils `sanitizeOutput` |
 | `logIgnore`, `logInclude` | Log filtering, added to / replacing the definition |
 | `snapshotStd`, `stdInclude` | Also snapshot `stdout` and/or `stderr` lines |
 | `extraAssertions` | `{ outdir, workflow -> ... }`, its result is added to the snapshot |

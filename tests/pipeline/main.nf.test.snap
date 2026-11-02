@@ -11,13 +11,13 @@
             ],
             [
                 "out.txt:md5,94baaad4d1347ec6e15ae35c88ee8bc8",
-                "table.csv:md5,6d93003f576df4147150b2abbf58f27b"
+                "table.csv:tableMD5,ccc82d7ba1d62bf1cb90eb64d2009f5f"
             ],
             [
                 "WARN: Greeting with bonjour"
             ]
         ],
-        "timestamp": "2026-11-02T15:40:21.661209879",
+        "timestamp": "2026-11-02T15:51:24.990829161",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.0"
@@ -34,7 +34,7 @@
                 "Failing on purpose: --fail was set"
             ]
         ],
-        "timestamp": "2026-11-02T15:40:28.479858852",
+        "timestamp": "2026-11-02T15:51:32.2460346",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.0"
@@ -52,7 +52,7 @@
             ],
             [
                 "out.txt:md5,b1946ac92492d2347c6235b4d2611184",
-                "table.csv:md5,6d93003f576df4147150b2abbf58f27b"
+                "table.csv:tableMD5,ccc82d7ba1d62bf1cb90eb64d2009f5f"
             ],
             "hello",
             [
@@ -62,7 +62,7 @@
                 "Input file: from setup"
             ]
         ],
-        "timestamp": "2026-11-02T15:40:32.441717921",
+        "timestamp": "2026-11-02T15:51:36.080416391",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.0"
@@ -80,13 +80,13 @@
             ],
             [
                 "out.txt:md5,b1946ac92492d2347c6235b4d2611184",
-                "table.csv:md5,6d93003f576df4147150b2abbf58f27b"
+                "table.csv:tableMD5,ccc82d7ba1d62bf1cb90eb64d2009f5f"
             ],
             [
                 "WARN: Greeting with hello"
             ]
         ],
-        "timestamp": "2026-11-02T15:40:17.75420697",
+        "timestamp": "2026-11-02T15:51:21.009692357",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.0"
@@ -106,7 +106,7 @@
                 "WARN: Greeting with hello"
             ]
         ],
-        "timestamp": "2026-11-02T15:40:25.475379133",
+        "timestamp": "2026-11-02T15:51:29.142382092",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.0"

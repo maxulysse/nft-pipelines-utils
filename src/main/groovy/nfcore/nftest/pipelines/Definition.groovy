@@ -15,7 +15,7 @@ class Definition {
         pipeline     : [] as Set,
         profile      : [] as Set,
         versionsFile : [] as Set,
-        snapshot     : ['ignoreFile', 'ignorePatterns', 'unstablePatterns', 'referenceFasta', 'csvDoubleDigits'] as Set
+        snapshot     : ['ignoreFile', 'ignorePatterns', 'unstablePatterns', 'referenceFasta', 'tableDoubleDigits', 'tableRemoveComments'] as Set
                         + (Scenario.TREATMENTS as Set),
         logs         : ['include', 'ignore'] as Set,
         tags         : ['prefixes'] as Set,

@@ -1,5 +1,8 @@
 # Test definition for the plugin's own test pipeline (tests/pipeline/main.nf)
 pipeline: pluginutils
 
+snapshot:
+  tableMD5Patterns: ['**/*.csv']
+
 naming:
   hideParams: [input]
