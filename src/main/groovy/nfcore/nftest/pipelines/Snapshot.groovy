@@ -39,7 +39,7 @@ class Snapshot {
         }
 
         def output = ctx.workflow.stderr + ctx.workflow.stdout
-        assertion << (utils.filterNextflowOutput([ignore: o.logIgnore, include: o.logInclude] as LinkedHashMap, output) ?: "No ${o.logInclude.join('/')} lines")
+        assertion << (utils.filterNextflowOutput([ignore: o.logIgnore, include: o.logInclude] as LinkedHashMap, output) ?: 'No warnings')
 
         if (o.snapshotStd) {
             def std = o.snapshotStd.collect { ctx.workflow."$it" }.flatten()
